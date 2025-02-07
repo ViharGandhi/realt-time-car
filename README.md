@@ -43,36 +43,7 @@ CORS Middleware
 
 Example of a simple middleware that sets Access-Control-Allow-Origin, Access-Control-Allow-Methods, etc.
 Essential for allowing browser clients from different domains to call this API.
-How to Run
-Set Environment Variables (via your shell or hosting platform):
 
-bash
-Copy
-Edit
-export REDIS_ADDR="localhost:6379"
-export REDIS_PASS=""
-export REDIS_DB="0"
-export PORT="8080"
-Adjust values according to your Redis setup and desired server port.
-
-Install Dependencies
-
-bash
-Copy
-Edit
-go mod tidy
-Run the Server
-
-bash
-Copy
-Edit
-go run main.go
-If everything is configured correctly, you’ll see:
-
-nginx
-Copy
-Edit
-Server starting on port 8080
 Connect a Frontend
 
 A React (or any other) frontend can fetch GET /position for the initial position,
