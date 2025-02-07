@@ -1,0 +1,115 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.track-container {
+  overflow-x: auto;
+  border: 2px solid gray;
+  margin-bottom: 20px;
+  position: relative;
+  width: 80vw;
+  height: 150px; /* Increased height */
+}
+
+.track {
+  height: 100%;
+  background-color: #8B4513; /* Brownish road */
+  border-top: 2px solid #D3D3D3;
+  border-bottom: 2px solid #D3D3D3;
+  position: relative;
+}
+
+.car-image {
+  transition: left 0.3s ease;
+  width: 70px; /* Increased width */
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.finish-line {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background-color: red;
+}
+
+.flag {
+  position: absolute;
+  width: 40px; /* Increased width */
+  height: 50px; /* Increased height */
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px; /* Increased font size */
+  border-radius: 5px 5px 0 0;
+  border: 1px solid #0056b3;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+.controls button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #45a049;
+}
+
+.controls button:active {
+  transform: translateY(0);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.controls button:nth-child(2) {
+  background-color: #f44336;
+}
+
+.controls button:nth-child(2):hover {
+  background-color: #da190b;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.track::before { /* Road lines */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: translateY(-50%);
+  animation: roadLineAnimation 2s linear infinite; /* Optional animation */
+}
+
+@keyframes roadLineAnimation {
+  0% { transform: translateY(-50%) translateX(0); }
+  100% { transform: translateY(-50%) translateX(-20px); }
+}
